@@ -1,0 +1,17 @@
+.button {
+    font-size: 10px;
+    text-decoration: none;
+    padding: 7px 12px;
+    font-weight: 500;
+    background: none;
+    border: 2px solid #1E58FF;
+    color: #1E58FF;
+}
+
+.secondary{
+    @extend .button;
+    margin: auto;
+    background: #1E58FF;
+    color: white;
+    font-size: 14px;
+}

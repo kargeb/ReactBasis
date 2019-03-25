@@ -1,0 +1,38 @@
+.wrapper{
+    // position: relative;
+    padding: 20px;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    // background: yellow;
+    color: #1E58FF;
+    font-weight: 700;
+    // align-items: baseline;
+}
+
+.item{
+    display: inline-block;
+    width: 30%;
+    // background: red;
+    // margin-left: 2px;
+}
+
+input{
+    appearance: none;
+    
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+  
+    border: 2px solid #999;
+    transition: 0.2s all linear;
+    outline: none;
+    margin-right: 5px;
+  
+    position: relative;
+    top: 4px;
+}
+
+input:checked {
+    border: 8px solid #1E58FF;
+  }

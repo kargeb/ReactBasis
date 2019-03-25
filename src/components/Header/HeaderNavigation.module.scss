@@ -1,0 +1,23 @@
+.wrapper {
+    // display: grid;
+    // grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    align-items: baseline;
+  }
+  .navItem{
+    list-style: none;
+    padding-right: 5vw;
+
+    &:first-child{
+      padding-left: 5vw;
+    }
+    
+    &Link {
+      text-decoration: none;
+      color: #818181;
+      
+      &Active {
+        font-weight: 700;
+      }
+    }
+  }
