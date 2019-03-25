@@ -17,7 +17,7 @@
     // margin-left: 2px;
 }
 
-input{
+.radioItem{
     appearance: none;
     
     border-radius: 50%;
@@ -33,6 +33,6 @@ input{
     top: 4px;
 }
 
-input:checked {
+.radioItem:checked {
     border: 8px solid #1E58FF;
   }

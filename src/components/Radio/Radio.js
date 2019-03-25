@@ -11,15 +11,15 @@ const Radio = ({handleRadio}) => {
     return (
     <div className={styles.wrapper} >
         <div className={styles.item} >
-            <input type="radio" id="twitter"  defaultChecked  onClick={handleRadio} name="modalRadio"/>
+            <input className={styles.radioItem} type="radio" id="twitter" defaultChecked  onClick={handleRadio} name="modalRadio"/>
             <label onClick={handleRadio} htmlFor="twitter">twitter</label>
         </div>
         <div className={styles.item}>
-            <input type="radio" id="article" onClick={handleRadio} name="modalRadio"/>
+            <input className={styles.radioItem} type="radio" id="article" onClick={handleRadio} name="modalRadio"/>
             <label onClick={handleRadio} htmlFor="article">article</label>
         </div>
         <div className={styles.item}>
-            <input type="radio" id="note" onClick={handleRadio} name="modalRadio"/>
+            <input className={styles.radioItem} type="radio" id="note" onClick={handleRadio} name="modalRadio"/>
             <label onClick={handleRadio} htmlFor="note">note</label>
         </div>
     </div>
