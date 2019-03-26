@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Input.module.scss';
 
-const Input = ({tag : Tag ,name, maxLength, label, required}) => (
+const Input = ({tag : Tag ,name, maxLength, label, required, ...props}) => (
 
     <div className={styles.formItem}>
         <Tag
@@ -13,6 +13,7 @@ const Input = ({tag : Tag ,name, maxLength, label, required}) => (
             id = {name}
             placeholder = " "
             required = {required}
+            {...props}
         />
         <label className={styles.label} htmlFor={name} >
             {label}

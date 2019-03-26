@@ -22,11 +22,28 @@ class Form extends React.Component{
       return;
     }
 
-    this.setState({ activeOption: options[e.target.id] });
+    this.setState({ type: options[e.target.id] });
+  }
+
+  handleInputChange = e => {
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
+
+    console.log(`
+      title: ${this.state.title},
+      link: ${this.state.link},
+      image: ${this.state.image},
+      description: ${this.state.description},
+    `);
   }
 
   state = {
-    activeOption: options.twitter
+    title: '',
+    link: '',
+    image: '',
+    description: '',
+    type: options.twitter
   }
 
   render() {
@@ -35,32 +52,39 @@ class Form extends React.Component{
       <AppContext.Consumer>
       {(context) => ( 
               <div className={styles.wrapper}> 
-                  <Title>Add new {this.state.activeOption}</Title>
+                  <Title>Add new {this.state.type}</Title>
                   <Radio handleRadio={this.handleRadio}/>
                   <form autoComplete="off" className={styles.form} onSubmit={context.addItem} >
                       <Input 
-                            name="name" 
-                            label= {this.state.activeOption === options.twitter ? "Name" : "Title"}
+                            name="title" 
+                            label= {this.state.type === options.twitter ? "Name" : "Title"}
                             maxLength={30}
+                            onChange={this.handleInputChange}
+                            value={this.state.title}
                       /> 
-                      { this.state.activeOption !== options.note && 
+                      { this.state.type !== options.note && 
                         <Input 
                         name="link" 
-                        label={ this.state.activeOption === options.twitter ? "Twitter link" : "link"}
-                        
+                        label={ this.state.type === options.twitter ? "Twitter link" : "link"}
+                        onChange={this.handleInputChange}
+                        value={this.state.link}
                         />
                       }
-                      { this.state.activeOption == options.twitter && 
+                      { this.state.type == options.twitter && 
                       <Input 
                         name="image" 
                         label="Image"
                         required={false}
+                        onChange={this.handleInputChange}
+                        value={this.state.image}
                       />
                       }
                       <Input 
                         tag="textarea" 
                         name="description" 
                         label="Description"
+                        onChange={this.handleInputChange}
+                        value={this.state.description}
                       />
                       <Button >
                         add new item
