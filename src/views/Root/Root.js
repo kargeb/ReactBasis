@@ -30,23 +30,14 @@ class Root extends React.Component{
         modalVisible: false,
     }
 
-    addItem = (e) => {
+    addItem = (e, newItem) => {
         e.preventDefault();
 
-        console.log("piesssssssssssssss hał");
+        this.setState( (prevState) => ({
+            [newItem.type]: [...prevState[newItem.type], newItem],
+         }));
 
-        // const newItem = {
-        //     name: e.target[0].value,
-        //     twitterLink: e.target[1].value,
-        //     image: e.target[2].value,
-        //     description: e.target[3].value,
-        // }
-
-        // this.setState( prevState => (
-        //     {
-        //     }
-        // ))
-        // e.target.reset();
+         this.closeModal();
     }
 
     showModal = () =>{

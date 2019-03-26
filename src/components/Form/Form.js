@@ -54,7 +54,7 @@ class Form extends React.Component{
               <div className={styles.wrapper}> 
                   <Title>Add new {this.state.type}</Title>
                   <Radio handleRadio={this.handleRadio}/>
-                  <form autoComplete="off" className={styles.form} onSubmit={context.addItem} >
+                  <form autoComplete="off" className={styles.form} onSubmit={ (e) => context.addItem(e, this.state)} >
                       <Input 
                             name="title" 
                             label= {this.state.type === options.twitter ? "Name" : "Title"}
