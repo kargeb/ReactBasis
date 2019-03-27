@@ -64,7 +64,6 @@ class Root extends React.Component{
             <BrowserRouter>
                 <AppContext.Provider value={contextElements} >
                     <Header showModal={this.showModal} />
-                    <h1>Hello piess</h1>
                     <Switch>
                         <Route exact path="/" component={TwittersView} />
                         <Route path="/articles" component={ArticlesView} />

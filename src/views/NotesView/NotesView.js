@@ -1,10 +1,13 @@
 import React from 'react';
-import styles from './NotesView.module.scss';
+import AppContext from '../../context';
+import List from '../../components/List/List';
 
-const NotesView = () => (
-
-    <p>This is Notes view</p>
-
+const ArticlesView = () => (
+    <AppContext.Consumer>
+        {(context) => (
+            <List items={context.note}/> 
+        )}
+    </AppContext.Consumer>
 )
 
-export default NotesView;
+export default ArticlesView;

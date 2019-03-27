@@ -4,23 +4,23 @@ import styles from './ListItem.module.scss';
 import Button from '../Button/Button.js';
 import Title from '../Title/Title.js';
 
-const ListItem = ( {image, name, description, twitterLink} ) => {
+const ListItem = ( {image, title, description, link} ) => {
     
     const ImageTag = image ? "img" : "div";
 
     return ( 
         <li className={styles.wrapper}>
-        <ImageTag 
-            src={image} 
-            className={image ? styles.image : styles.imageNone} 
-            alt={name}
-        />
+            {image && <ImageTag 
+                        src={image} 
+                        className={image ? styles.image : styles.imageNone} 
+                        alt={title}
+                    />}
             <div>
-                <Title>{name}</Title>
+                <Title>{title}</Title>
                 <p className={styles.description}>{description}</p>
-                <Button href={twitterLink} >
-                     {twitterLink}
-                </Button>
+                {link && <Button href={link} >
+                            {link}
+                        </Button>}
             </div>
         </li>
     );
@@ -29,15 +29,15 @@ const ListItem = ( {image, name, description, twitterLink} ) => {
 console.dir(ListItem);
 
 ListItem.propTypes = {
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
     image: PropTypes.string,
-    name: PropTypes.string.isRequired,
-    description: PropTypes.string,
-    twitterLink: PropTypes.string
+    link: PropTypes.string
 }
 
 ListItem.defaultProps = {
     image: null,
-    description: "nice guy"
+    link: null
 }
 
 export default ListItem;

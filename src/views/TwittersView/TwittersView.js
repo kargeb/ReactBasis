@@ -1,10 +1,13 @@
 import React from 'react';
-import styles from './TwittersView.module.scss';
+import AppContext from '../../context';
+import List from '../../components/List/List';
 
-const TwitterView = () => (
-
-    <p>This is Twitters view</p>
-
+const ArticlesView = () => (
+    <AppContext.Consumer>
+        {(context) => (
+            <List items={context.twitter}/> 
+        )}
+    </AppContext.Consumer>
 )
 
-export default TwitterView;
+export default ArticlesView;
